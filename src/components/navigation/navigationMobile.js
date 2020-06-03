@@ -76,6 +76,7 @@ const NavigationMobile = ({
           sx={{
             p: 0,
             li: {
+              my: 3,
               a: {
                 color: "white",
               },

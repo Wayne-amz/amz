@@ -4,11 +4,12 @@ import PropTypes from "prop-types";
 import { Fragment } from "react";
 import Image from "../image";
 import StyledLink from "../link/styledLink";
+import { createMarkup } from "../../utils/functions";
 
 const ProductGallery = ({ products, title }) => {
   return (
     <Fragment>
-      <Styled.h2 sx={{ mt: [6], mb: "0px", textAlign: "center" }}>
+      <Styled.h2 sx={{ mt: [6], mb: 4, textAlign: "center" }}>
         {title}
       </Styled.h2>
       <div
@@ -17,6 +18,9 @@ const ProductGallery = ({ products, title }) => {
           flexWrap: "wrap",
           justifyContent: "space-around",
           px: 4,
+          a:{
+            mb:[6, "0px"],
+          }
         }}
       >
         {products.map((product) => {
@@ -24,11 +28,12 @@ const ProductGallery = ({ products, title }) => {
             <div
               key={product.id}
               sx={{
-                minWidth: ["250px", "150px", "300px"],
                 textAlign: "center",
-                pb: 4,
+                display: "flex",
+                flexDirection: "column",
                 div: {
-                  my: 4,
+                  width: ["180px", "90px", "120px"],
+                  alignSelf: "center",
                 },
               }}
             >
@@ -36,9 +41,16 @@ const ProductGallery = ({ products, title }) => {
                 image={product.productImage.fluid}
                 alt={product.productImage.alt}
               />
-              <Styled.h3 sx={{ mb: 3 }}>{product.productTitle}</Styled.h3>
-              <StyledLink href="/products" color="#111111" hovercolor="white">
-                View products
+
+              <Styled.h3 sx={{ mt: 3 }}>{product.productTitle}</Styled.h3>
+              <div
+                sx={{ p: { mb: 3 } }}
+                dangerouslySetInnerHTML={createMarkup(
+                  product.productDescrriptionNode.childMarkdownRemark.html
+                )}
+              />
+              <StyledLink href="/services" color="#111111" hovercolor="white">
+                View
               </StyledLink>
             </div>
           );
