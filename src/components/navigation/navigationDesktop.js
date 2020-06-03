@@ -82,7 +82,7 @@ const NavigationDesktop = ({
       >
         <NavigationLink href={`/about/`}>About</NavigationLink>
 
-        <NavigationLink href={`/products/`}>Products</NavigationLink>
+        <NavigationLink href={`/services/`}>Services</NavigationLink>
 
         <NavigationLink href={`/contact/`}>Contact</NavigationLink>
       </ul>

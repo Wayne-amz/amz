@@ -85,8 +85,8 @@ const NavigationMobile = ({
           <NavigationLink open={open} href={`/about/`}>
             About
           </NavigationLink>
-          <NavigationLink open={open} href={`/products/`}>
-            Products
+          <NavigationLink open={open} href={`/services/`}>
+            Services
           </NavigationLink>
 
           <NavigationLink open={open} href={`/contact/`}>

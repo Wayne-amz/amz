@@ -172,11 +172,11 @@ const Footer = () => {
               <p> About </p>
             </Link>
             <Link
-              to={`/products/`}
-              aria-label={`Link to products`}
+              to={`/services/`}
+              aria-label={`Link to services`}
               sx={linkStyle}
             >
-              <p>Products</p>
+              <p>Services</p>
             </Link>
 
             <Link
