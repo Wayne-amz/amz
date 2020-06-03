@@ -49,7 +49,7 @@ const DesktopSlider = ({
       sx={{
         display: ["none", "flex", "flex"],
         flexDirection: ["column-reverse", "row-reverse"],
-        mb: 4,
+        mb: 8,
       }}
     >
       <div sx={{ flex: "1" }}>

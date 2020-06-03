@@ -81,6 +81,7 @@ const Contact = () => {
             pb: "48px",
             display: "flex",
             flexDirection: ["column-reverse", "row", null],
+            height: "100%",
           }}
         >
           <div
