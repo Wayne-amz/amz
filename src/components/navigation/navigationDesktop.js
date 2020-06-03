@@ -80,11 +80,17 @@ const NavigationDesktop = ({
           },
         }}
       >
-        <NavigationLink href={`/about/`}>About</NavigationLink>
+        <NavigationLink showBackground={showBackground} href={`/about/`}>
+          About
+        </NavigationLink>
 
-        <NavigationLink href={`/services/`}>Services</NavigationLink>
+        <NavigationLink showBackground={showBackground} href={`/services/`}>
+          Services
+        </NavigationLink>
 
-        <NavigationLink href={`/contact/`}>Contact</NavigationLink>
+        <NavigationLink showBackground={showBackground} href={`/contact/`}>
+          Contact
+        </NavigationLink>
       </ul>
       <div sx={{ display: "flex" }}>
         {instagram && (

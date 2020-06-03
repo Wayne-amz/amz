@@ -3,7 +3,6 @@ import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
 
 const Hamburger = ({ open, setOpen, color }) => {
-  console.log(color);
   const burgerLine = (action) => {
     let animation = {};
     if (open) {

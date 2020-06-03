@@ -2,8 +2,19 @@
 import PropTypes from "prop-types";
 import { jsx } from "theme-ui";
 import { Link } from "gatsby";
+import { useState, useEffect } from "react";
+import { useLocation } from "@reach/router";
 
-const NavigationLink = ({ children, href }) => {
+const NavigationLink = ({ children, href, showBackground }) => {
+  const [landingpage, setLandingPage] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/" || location.pathname === "/about/") {
+      setLandingPage(true);
+    }
+  }, [location.pathname]);
+
   return (
     <li
       sx={{
@@ -31,7 +42,7 @@ const NavigationLink = ({ children, href }) => {
             display: "block",
             width: "0%",
             borderBottom: "1px solid",
-            borderColor: ["highlight", "white"],
+            borderColor: showBackground || !landingpage ? "#111111" : "white",
             transition: "0.2s",
             borderRadius: "2px",
             margin: "auto",
@@ -66,6 +77,7 @@ NavigationLink.defaultProps = {
 NavigationLink.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
+  showBackground: PropTypes.bool,
 };
 
 export default NavigationLink;
