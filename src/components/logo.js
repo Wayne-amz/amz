@@ -12,7 +12,7 @@ const Logo = ({ logo }) => {
         <Link
           to="/"
           sx={{
-            width: ["30px", "30px", "150px"],
+            width: ["50px", "60px"],
             py: 2,
           }}
         >
