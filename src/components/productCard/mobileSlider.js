@@ -39,7 +39,7 @@ const MobileSlider = ({
       sx={{
         display: ["flex", "none", "none"],
         flexDirection: ["column"],
-        mt: 4,
+        mt: 6,
         mb: 6,
       }}
     >
@@ -117,12 +117,14 @@ const MobileSlider = ({
             specificationListNode.childMarkdownRemark.html
           )}
         />
-        <ExternalLink
-          text={externalButtonText}
-          href={externalButtonLink}
-          hovercolor="white"
-          color="#111111"
-        />
+        {externalButtonLink && (
+          <ExternalLink
+            text={externalButtonText}
+            href={externalButtonLink}
+            hovercolor="white"
+            color="#111111"
+          />
+        )}
       </div>
     </article>
   );

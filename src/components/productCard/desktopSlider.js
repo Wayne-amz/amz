@@ -118,12 +118,14 @@ const DesktopSlider = ({
             )}
           />
           <div sx={{ py: 3 }}>
-            <ExternalLink
-              text={externalButtonText}
-              href={externalButtonLink}
-              hovercolor="white"
-              color="#111111"
-            />
+            {externalButtonLink && (
+              <ExternalLink
+                text={externalButtonText}
+                href={externalButtonLink}
+                hovercolor="white"
+                color="#111111"
+              />
+            )}
           </div>
         </div>
       </div>
