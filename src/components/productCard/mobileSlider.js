@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { useState } from "react";
 import PropTypes from "prop-types";
 import Image from "../image";
 import "slick-carousel/slick/slick.css";
@@ -8,8 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { createMarkup } from "../../utils/functions";
 import ExternalLink from "../link/externalLink";
-import Arrow from "../Icons/arrow";
-import { toggleText } from "../../utils/functions";
 
 const MobileSlider = ({
   imageGallery,
@@ -35,6 +32,7 @@ const MobileSlider = ({
 
   return (
     <article
+      id={id}
       sx={{
         display: ["flex", "none", "none"],
         flexDirection: ["column"],
@@ -52,7 +50,7 @@ const MobileSlider = ({
             ))}
           </Slider>
         </div>
-        <Styled.h2 id={id}>{heading}</Styled.h2>
+        <Styled.h2>{heading}</Styled.h2>
         <p
           sx={{
             fontWeight: "heading",
