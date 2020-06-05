@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import PropTypes from "prop-types";
 import { jsx } from "theme-ui";
-import { Link } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const StyledLink = ({ children, href, color, hovercolor }) => {
   return (
-    <Link
+    <AnchorLink
       to={href}
       aria-label={`Link to ${href}`}
-      activeClassName="active"
+      stripHash
       sx={{
         display: "inline-block",
         maxWidth: "170px",
@@ -44,7 +44,7 @@ const StyledLink = ({ children, href, color, hovercolor }) => {
       }}
     >
       {children}
-    </Link>
+    </AnchorLink>
   );
 };
 

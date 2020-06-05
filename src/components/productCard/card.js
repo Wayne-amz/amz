@@ -19,6 +19,7 @@ const Card = ({ section }) => {
             externalButtonText,
             externalButtonLink,
             imageGallery,
+            serviceId,
           },
           index
         ) => (
@@ -33,6 +34,7 @@ const Card = ({ section }) => {
               externalButtonLink={externalButtonLink}
               descriptionNode={descriptionNode}
               imageGallery={imageGallery}
+              id={serviceId}
             />
             <MobileSlider
               key={index}
@@ -45,6 +47,7 @@ const Card = ({ section }) => {
               externalButtonLink={externalButtonLink}
               descriptionNode={descriptionNode}
               imageGallery={imageGallery}
+              id={serviceId}
             />
           </Fragment>
         )

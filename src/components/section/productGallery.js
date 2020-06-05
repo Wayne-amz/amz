@@ -18,15 +18,15 @@ const ProductGallery = ({ products, title }) => {
           flexWrap: "wrap",
           justifyContent: "space-around",
           px: 4,
-          a:{
-            mb:[6, "0px"],
-          }
+          a: {
+            mb: [6, "0px"],
+          },
         }}
       >
-        {products.map((product) => {
+        {products.map((product, index) => {
           return (
             <div
-              key={product.id}
+              key={index}
               sx={{
                 textAlign: "center",
                 display: "flex",
@@ -49,7 +49,11 @@ const ProductGallery = ({ products, title }) => {
                   product.productDescrriptionNode.childMarkdownRemark.html
                 )}
               />
-              <StyledLink href="/services" color="#111111" hovercolor="white">
+              <StyledLink
+                href={`/services#${product.serviceId}`}
+                color="#111111"
+                hovercolor="white"
+              >
                 View
               </StyledLink>
             </div>

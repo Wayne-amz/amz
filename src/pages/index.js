@@ -57,7 +57,7 @@ const IndexPage = () => {
           }
           productSectionTitle
           productGallery {
-            id
+            serviceId
             productDescrriptionNode {
               childMarkdownRemark {
                 html

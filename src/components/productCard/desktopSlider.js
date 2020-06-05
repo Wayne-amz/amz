@@ -8,8 +8,6 @@ import Slider from "react-slick";
 import { useState } from "react";
 import { createMarkup } from "../../utils/functions";
 import ExternalLink from "../link/externalLink";
-import Arrow from "../Icons/arrow";
-import { toggleText } from "../../utils/functions";
 
 const DesktopSlider = ({
   imageGallery,
@@ -20,10 +18,9 @@ const DesktopSlider = ({
   specificationListNode,
   externalButtonText,
   externalButtonLink,
+  id,
 }) => {
   const [focusImage, setFocusImage] = useState();
-  const [maxheight, setMaxheight] = useState("90px");
-  const [open, setOpen] = useState(false);
 
   const settings = {
     infinite: true,
@@ -46,6 +43,7 @@ const DesktopSlider = ({
   };
   return (
     <article
+      id={id}
       sx={{
         display: ["none", "flex", "flex"],
         flexDirection: ["column-reverse", "row-reverse"],
@@ -65,38 +63,11 @@ const DesktopSlider = ({
           </p>
           <div sx={{ my: 3 }}>
             <div
-              sx={{
-                maxHeight: maxheight,
-                overflow: "hidden",
-                transition: "max-height .5s ease-in-out",
-              }}
               dangerouslySetInnerHTML={createMarkup(
                 descriptionNode.childMarkdownRemark.html
               )}
             />
           </div>
-          <button
-            sx={{
-              outline: "none",
-              border: "none",
-              display: "flex",
-              alignItems: "center",
-              background: "transparent",
-              cursor: "poiter",
-              p: {
-                ml: 1,
-              },
-              div: {
-                svg: {
-                  transform: open ? "rotate(180deg)" : "rotate(0deg)",
-                },
-              },
-            }}
-            onClick={() => toggleText(open, setOpen, setMaxheight)}
-          >
-            <Arrow fill="#111111" width="12px" />
-            <p> View more</p>
-          </button>
           <p
             sx={{
               fontWeight: "heading",

@@ -20,6 +20,7 @@ const MobileSlider = ({
   specificationListNode,
   externalButtonText,
   externalButtonLink,
+  id,
 }) => {
   const settings = {
     infinite: true,
@@ -32,8 +33,6 @@ const MobileSlider = ({
     focusOnSelect: true,
   };
 
-  const [maxheight, setMaxheight] = useState("90px");
-  const [open, setOpen] = useState(false);
   return (
     <article
       sx={{
@@ -53,7 +52,7 @@ const MobileSlider = ({
             ))}
           </Slider>
         </div>
-        <Styled.h2>{heading}</Styled.h2>
+        <Styled.h2 id={id}>{heading}</Styled.h2>
         <p
           sx={{
             fontWeight: "heading",
@@ -61,42 +60,15 @@ const MobileSlider = ({
             my: 2,
           }}
         >
-          Price: {price}
+          {price}
         </p>
         <div sx={{ my: 2 }}>
           <div
-            sx={{
-              maxHeight: maxheight,
-              overflow: "hidden",
-              transition: "max-height .5s ease-in-out",
-            }}
             dangerouslySetInnerHTML={createMarkup(
               descriptionNode.childMarkdownRemark.html
             )}
           />
         </div>
-        <button
-          sx={{
-            outline: "none",
-            border: "none",
-            display: "flex",
-            alignItems: "center",
-            background: "transparent",
-            cursor: "poiter",
-            p: {
-              ml: 1,
-            },
-            div: {
-              svg: {
-                transform: open ? "rotate(180deg)" : "rotate(0deg)",
-              },
-            },
-          }}
-          onClick={() => toggleText(open, setOpen, setMaxheight)}
-        >
-          <Arrow fill="#111111" width="12px" />
-          <p> View more</p>
-        </button>
         <p
           sx={{
             fontWeight: "heading",

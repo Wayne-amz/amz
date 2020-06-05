@@ -14,7 +14,7 @@ const Products = () => {
           title
           slug
           productBlock {
-            id
+            serviceId
             heading
             price
             descriptionNode {
