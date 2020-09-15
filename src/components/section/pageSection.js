@@ -13,7 +13,7 @@ const PageSection = ({ section }) => {
         display: "flex",
         flexDirection: ["column", "row"],
         backgroundColor: "primary",
-        ":nth-of-type(2)": {
+        ":nth-child(odd)": {
           flexDirection: [null, "row-reverse"],
           backgroundColor: ["background", "primary"],
         },
